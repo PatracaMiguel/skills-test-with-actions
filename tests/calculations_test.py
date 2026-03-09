@@ -58,13 +58,26 @@ def test_get_nth_fibonacci_one():
     assert result == 1
 
 
-# def test_get_nth_fibonacci_ten():
-#     """Test with n=10."""
+def test_get_nth_fibonacci_ten():
+     """Test with n=10."""
 #     # Arrange
-#     n = 10
+     n = 10
 
 #     # Act
-#     result = get_nth_fibonacci(n)
+     result = get_nth_fibonacci(n)
 
 #     # Assert
-#     assert result == 89
+     assert result == 55
+
+# Prueba 1: Caso borde n=0
+def test_get_nth_fibonacci_zero():
+    n = 0
+    result = get_nth_fibonacci(n)
+    assert result == 0
+
+# Prueba 2: Caso de error (número negativo)
+def test_get_nth_fibonacci_negative():
+    n = -1
+    with pytest.raises(ValueError):
+        get_nth_fibonacci(n)
+    
